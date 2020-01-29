@@ -3,7 +3,7 @@
 
 **Description:**
 
-A Java Client for Devtools with integration focused specially with Selenium WebDriver. 
+A Java Client for Devtools with integration focused specially with Selenium WebDriver. The purpose of the project is to expand the boundaries of the selenium webdriver so that it can provide deeper browser automation using devtools integration.
 
 For more information on DevTools, see https://chromedevtools.github.io/devtools-protocol/.
 For more information on Selenium, see https://github.com/SeleniumHQ/selenium
@@ -23,7 +23,6 @@ We are in the process of adding this as dependecy to maven and will be published
 **Examples:**
 
 **Selenium 4 Devtools Code for Taking Full Screenshot**
-
 
 ```
 package selenium.tests;
