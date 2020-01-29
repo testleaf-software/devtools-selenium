@@ -5,8 +5,8 @@
 
 A Java Client for Devtools with integration focused specially with Selenium WebDriver. The purpose of the project is to expand the boundaries of the selenium webdriver so that it can provide deeper browser automation using devtools integration.
 
-For more information on DevTools, see https://chromedevtools.github.io/devtools-protocol/.
-For more information on Selenium, see https://github.com/SeleniumHQ/selenium
+For more information on Chrome DevTools, see https://chromedevtools.github.io/devtools-protocol/.
+For more information on Selenium Devtools, see https://github.com/SeleniumHQ/selenium/tree/master/java/client/src/org/openqa/selenium/support/devtools
 
 The source code is made available under the [Apache 2.0 license]
 
