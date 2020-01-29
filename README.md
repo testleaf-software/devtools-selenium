@@ -1,4 +1,4 @@
-# Devtools - Selenium WebDriver Integration Project 
+# Devtools - Selenium WebDriver Integration Project (Java Client)
 
 
 **Description:**
