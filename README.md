@@ -197,7 +197,7 @@ public class FullPageScreenshotWithoutSelenium {
 More Examples can be seen [here](https://github.com/testleaf-software/devtools-selenium/tree/master/ChromeDevTools/src/test/java/com/github/qeagle/devtools/examples). 
 
 
-**Additional Insights*?
+**Additional Insights**
 
 1) Selenium WebDriver Devtools is in the early stage of wrapping few essential domains. Hence you may have to write your own custom code for non available methods and listeners like above case. 
 2) Whereas, in this repo - we have built all the existing chrome devtools domain - including methods, types and listeners in Java and that makes your code more manageable and simplified.
