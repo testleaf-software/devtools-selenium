@@ -24,11 +24,7 @@ The source code is made available under the [Apache 2.0 license]
 Add the following dependency to your `pom.xml`:
 
 ```xml
-<dependency>
-  <groupId>com.qeagle</groupId>
-  <artifactId>devtools-selenium</artifactId>
-  <version>1.2.1</version>
-</dependency>
+Will be updated Shortly
 ```
 **Examples:**
 
