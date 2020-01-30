@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="139825" started-at="2020-01-18T11:10:22 IST" finished-at="2020-01-18T11:12:42 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="139825" started-at="2020-01-18T11:10:22 IST" finished-at="2020-01-18T11:12:42 IST">
+      <class name="testcases.EditLead">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:testcases.EditLead@10bbd20a]" name="setValues" is-config="true" duration-ms="0" started-at="2020-01-18T11:10:22 IST" finished-at="2020-01-18T11:10:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="login()[pri:0, instance:testcases.EditLead@10bbd20a]" name="login" is-config="true" duration-ms="10619" started-at="2020-01-18T11:11:58 IST" finished-at="2020-01-18T11:12:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="editLead(java.lang.String, java.lang.String)[pri:0, instance:testcases.EditLead@10bbd20a]" name="editLead" duration-ms="11597" started-at="2020-01-18T11:12:08 IST" data-provider="fetchData" finished-at="2020-01-18T11:12:20 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[99]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestLeaf]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editLead -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testcases.EditLead@10bbd20a]" name="closeBrowser" is-config="true" duration-ms="437" started-at="2020-01-18T11:12:20 IST" finished-at="2020-01-18T11:12:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="login()[pri:0, instance:testcases.EditLead@10bbd20a]" name="login" is-config="true" duration-ms="9919" started-at="2020-01-18T11:12:20 IST" finished-at="2020-01-18T11:12:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="editLead(java.lang.String, java.lang.String)[pri:0, instance:testcases.EditLead@10bbd20a]" name="editLead" duration-ms="11277" started-at="2020-01-18T11:12:30 IST" data-provider="fetchData" finished-at="2020-01-18T11:12:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[99]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Qeagle]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editLead -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testcases.EditLead@10bbd20a]" name="closeBrowser" is-config="true" duration-ms="237" started-at="2020-01-18T11:12:42 IST" finished-at="2020-01-18T11:12:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testcases.EditLead -->
+      <class name="testcases.DeleteLead">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:testcases.DeleteLead@64729b1e]" name="setValues" is-config="true" duration-ms="1" started-at="2020-01-18T11:10:22 IST" finished-at="2020-01-18T11:10:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="login()[pri:0, instance:testcases.DeleteLead@64729b1e]" name="login" is-config="true" duration-ms="11366" started-at="2020-01-18T11:11:07 IST" finished-at="2020-01-18T11:11:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="deleteLead(java.lang.String)[pri:0, instance:testcases.DeleteLead@64729b1e]" name="deleteLead" duration-ms="12276" started-at="2020-01-18T11:11:19 IST" data-provider="fetchData" finished-at="2020-01-18T11:11:31 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteLead -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testcases.DeleteLead@64729b1e]" name="closeBrowser" is-config="true" duration-ms="2189" started-at="2020-01-18T11:11:31 IST" finished-at="2020-01-18T11:11:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="login()[pri:0, instance:testcases.DeleteLead@64729b1e]" name="login" is-config="true" duration-ms="9740" started-at="2020-01-18T11:11:33 IST" finished-at="2020-01-18T11:11:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="deleteLead(java.lang.String)[pri:0, instance:testcases.DeleteLead@64729b1e]" name="deleteLead" duration-ms="12593" started-at="2020-01-18T11:11:43 IST" data-provider="fetchData" finished-at="2020-01-18T11:11:55 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteLead -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testcases.DeleteLead@64729b1e]" name="closeBrowser" is-config="true" duration-ms="2148" started-at="2020-01-18T11:11:55 IST" finished-at="2020-01-18T11:11:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testcases.DeleteLead -->
+      <class name="testcases.CreateLead">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:testcases.CreateLead@4e7dc304]" name="setValues" is-config="true" duration-ms="38" started-at="2020-01-18T11:10:22 IST" finished-at="2020-01-18T11:10:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="login()[pri:0, instance:testcases.CreateLead@4e7dc304]" name="login" is-config="true" duration-ms="14349" started-at="2020-01-18T11:10:23 IST" finished-at="2020-01-18T11:10:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="createLead(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.CreateLead@4e7dc304]" name="createLead" duration-ms="7577" started-at="2020-01-18T11:10:38 IST" data-provider="fetchData" finished-at="2020-01-18T11:10:45 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Qeagle]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Gopinath]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Jayakumar]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLead -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testcases.CreateLead@4e7dc304]" name="closeBrowser" is-config="true" duration-ms="2126" started-at="2020-01-18T11:10:45 IST" finished-at="2020-01-18T11:10:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="login()[pri:0, instance:testcases.CreateLead@4e7dc304]" name="login" is-config="true" duration-ms="11214" started-at="2020-01-18T11:10:47 IST" finished-at="2020-01-18T11:10:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="createLead(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.CreateLead@4e7dc304]" name="createLead" duration-ms="6316" started-at="2020-01-18T11:10:59 IST" data-provider="fetchData" finished-at="2020-01-18T11:11:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Servco]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Derrick]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Wong]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLead -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testcases.CreateLead@4e7dc304]" name="closeBrowser" is-config="true" duration-ms="2206" started-at="2020-01-18T11:11:05 IST" finished-at="2020-01-18T11:11:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testcases.CreateLead -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
