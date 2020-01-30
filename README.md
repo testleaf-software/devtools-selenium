@@ -30,7 +30,7 @@ Will be updated Shortly
 
 **Selenium 4 Devtools Code for Taking Full Screenshot**
 
-```
+```java
 package selenium.tests;
 
 import java.io.File;
@@ -93,7 +93,7 @@ public class SeleniumDevToolsFullSnap{
 }
 
 
-```
+```java
 
 **DevTools-Selenium Code for taking Full Page Screenshot**
 
@@ -154,7 +154,7 @@ public class FullPageScreenshot {
 
 **DevTools Indepdent Code for taking Full Page Screenshot (Without Using Selenium)**
 
-```
+```java
 package com.github.qeagle.devtools.examples;
 
 import com.github.qeagle.devtools.protocol.commands.Emulation;
