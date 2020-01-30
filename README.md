@@ -1,12 +1,15 @@
-# Devtools - Selenium WebDriver Integration Project (Java Client)
+# DevTools - Selenium WebDriver Integration Project (Java Client)
 
+DevTools-Selenium is a Java library for Integrating Selenium WebDriver and Chrome DevTools.
 
-**Description:**
+**Declarative:** DevTools-Selenium makes it painless to call devtools api either independently or through Selenium WebDriver. DevTools-Selenium will efficiently interact with Chrome DevTools Protocol, that allows for tools to instrument, inspect, debug and profile Chromium, Chrome, Edge and other Blink-based browsers.Declarative code make your test script more predictable, simpler to understand, and easier to debug.
 
-A Java Client for Devtools with integration focused specially with Selenium WebDriver. The purpose of the project is to expand the boundaries of the selenium webdriver so that it can provide deeper browser automation using devtools integration.
+**Domain-Based:** Build encapsulated components that assist to call each instrumentation domain like DOM, Debugger, Network etc. Every domain wrapper has all the commands it supports and events it generates. 
+
+**Learn Once, Run Independently or with Selenium:** We don't make assumptions about your test automation stack, so you can integrate the Devtools Features with Selenium WebDriver with single line of code. DevTools-Selenium also offer you to interact with Chrome through devtools API and without using Selenium WebDriver.
 
 For more information on Chrome DevTools, see https://chromedevtools.github.io/devtools-protocol/.
-For more information on Selenium Devtools, see https://github.com/SeleniumHQ/selenium/tree/master/java/client/src/org/openqa/selenium/support/devtools
+Selenium 4 Devtools API can be found here: https://github.com/SeleniumHQ/selenium/tree/master/java/client/src/org/openqa/selenium/support/devtools
 
 The source code is made available under the [Apache 2.0 license]
 
