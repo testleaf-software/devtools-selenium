@@ -102,15 +102,17 @@ public class SeleniumDevToolsFullSnap{
 **DevTools-Selenium Code for taking Full Page Screenshot**
 
 ```
-package com.github.qeagle.devtools.examples;
+package com.qeagle.devtools.examples;
 
-import com.github.qeagle.devtools.protocol.commands.Emulation;
-import com.github.qeagle.devtools.protocol.types.page.CaptureScreenshotFormat;
-import com.github.qeagle.devtools.protocol.types.page.LayoutMetrics;
-import com.github.qeagle.devtools.protocol.types.page.Viewport;
-import com.github.qeagle.devtools.services.ChromeDevToolsService;
-import com.github.qeagle.devtools.services.ChromeService;
-import com.github.qeagle.devtools.services.impl.ChromeServiceImpl;
+import com.qeagle.devtools.protocol.commands.Emulation;
+import com.qeagle.devtools.protocol.types.page.CaptureScreenshotFormat;
+import com.qeagle.devtools.protocol.types.page.LayoutMetrics;
+import com.qeagle.devtools.protocol.types.page.Viewport;
+import com.qeagle.devtools.services.ChromeDevToolsService;
+import com.qeagle.devtools.services.ChromeService;
+import com.qeagle.devtools.services.impl.ChromeServiceImpl;
+import com.qeagle.devtools.utils.FullScreenshot;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -118,14 +120,16 @@ import java.util.Base64;
 import java.util.Map;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.qeagle.devtools.webdriver.DevToolsService;
 
 /**
- * Takes a full page screenshot. The output screenshot dimensions will be page width x page height,
- * for example when capturing http://amazon.com the output screenshot.
+ * Takes a full page screenshot. The output screenshot dimensions will be page width x page height
+ * 
  *
- * @author TestLeaf
+ * @author Gopinath
  */
 public class FullPageScreenshot {
+
 
 	public static void main(String[] args) {
 
@@ -134,20 +138,19 @@ public class FullPageScreenshot {
 
 		// Launch chrome using Selenium
 		ChromeDriver driver = new ChromeDriver();
-		driver.get("https://www.amazon.com/");
+		driver.get("https://www.amazon.in/ref=cs_503_link/");
 
-		// Get the Google ChromeOptions
-		Object capability = driver.getCapabilities().getCapability("goog:chromeOptions");
-		Map<String,String> chromeOptions = (Map<String,String>)capability;
+		// Get the Devtools Service
+		ChromeDevToolsService devToolsService = DevToolsService.getDevToolsService(driver);
 
-		// Connect to the chrome driver service
-		ChromeService chromeService = new ChromeServiceImpl(Integer.parseInt(chromeOptions.get("debuggerAddress").replaceAll("\\D","")));	
-		ChromeDevToolsService devToolsService = chromeService.createDevToolsService();
+		// Take full screen
+		FullScreenshot.captureFullPageScreenshot(devToolsService, "screenshot.png");
 
-		// Take full screen (Integrated with Selenium using Remote Debugger Address
-		DevToolsScreenshot.captureFullPageScreenshot(devToolsService, "screenshot.png");
+		// Close the browser
+		driver.close();
 
 	}
+
 
 }
 
@@ -184,19 +187,19 @@ public class FullPageScreenshotWithoutSelenium {
 	public static void main(String[] args) {
 
 		// Create chrome launcher.
-    ChromeLauncher launcher = new ChromeLauncher();
+                ChromeLauncher launcher = new ChromeLauncher();
 
-    // Launch chrome either as headless (true) or regular (false).
-    ChromeService chromeService = launcher.launch(false);
+                // Launch chrome either as headless (true) or regular (false).
+                ChromeService chromeService = launcher.launch(false);
 
-    // Create empty tab ie about:blank.
-    ChromeTab tab = chromeService.createTab();
+                // Create empty tab ie about:blank.
+                ChromeTab tab = chromeService.createTab();
 
-    // Get DevTools service to this tab
-    ChromeDevToolsService devToolsService = chromeService.createDevToolsService(tab);
+                // Get DevTools service to this tab
+                ChromeDevToolsService devToolsService = chromeService.createDevToolsService(tab);
 
 		// Take full screen (Integrated with Selenium using Remote Debugger Address
-		DevToolsScreenshot.captureFullPageScreenshot(devToolsService, "screenshot.png");
+		FullScreenshot.captureFullPageScreenshot(devToolsService, "screenshot.png");
 
 	}
 
