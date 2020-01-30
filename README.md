@@ -93,11 +93,11 @@ public class SeleniumDevToolsFullSnap{
 }
 
 
-```java
+```
 
 **DevTools-Selenium Code for taking Full Page Screenshot**
 
-```
+```java
 package com.qeagle.devtools.examples;
 
 import com.qeagle.devtools.protocol.commands.Emulation;
