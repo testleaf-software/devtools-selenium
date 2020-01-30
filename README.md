@@ -19,10 +19,17 @@ The source code is made available under the [Apache 2.0 license]
 1) This is independent Java project that helps you to interact with chrome (with and without Selenium WebDriver) and perform all your devtools operations that is built within the chrome devtools protocol.
 2) For every single domain, the Java client is built and by which, the methods, types and event listeners are wrapped and exposed. By which, the integration becomes easier 
 
-**Usage:**
+## Usage
 
-We are in the process of adding this as dependecy to maven and will be published shortly. Stay for the update soon.
+Add the following dependency to your `pom.xml`:
 
+```xml
+<dependency>
+  <groupId>com.qeagle</groupId>
+  <artifactId>devtools-selenium</artifactId>
+  <version>1.2.1</version>
+</dependency>
+```
 **Examples:**
 
 **Selenium 4 Devtools Code for Taking Full Screenshot**
