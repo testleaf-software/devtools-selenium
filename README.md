@@ -32,29 +32,85 @@ Add the following dependency to your `pom.xml`:
 ```
 **Examples:**
 
+** Example of using Event Listeners - Waiting for the Layers to disappear **
+
+```java
+
+/**
+ * Wait for the top layer to disappear - works for any loader
+ *
+ * @author Gopinath
+ */
+public class WaitForLayersToDisapper {
+	public static void main(String[] args) {
+
+		// Create chrome launcher.
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+
+		// Launch chrome using Selenium
+		ChromeDriver driver = new ChromeDriver();
+
+		// Get the Devtools Service
+		ChromeDevToolsService devToolsService = DevToolsService.getDevToolsService(driver);
+		
+		// Load the URL now
+		driver.get("https://raphaelfabeni.com/css-loader/");
+
+		// Get the Layers 
+		LayerTree layers = LayerChange.enableLayers(devToolsService);
+
+		// Click on loader
+		driver.findElement(By.id("loader-border")).click();
+
+		// Wait for the layers for reset
+		LayerChange.waitUntilLayerChanged(layers);
+		
+		// Reset the layers
+		LayerChange.disableLayers(devToolsService);
+		
+		// Click on the next element
+		driver.findElement(By.id("loader-bar-rounded")).click();
+
+	}
+}
+
+```
+
+** Example of using Event Listeners - Performance Metrics **
+
+```java
+
+/**
+ * Get the Performance metrics on every page load
+ *
+ * @author Gopinath
+ */
+public class PerformanceMetricsExample {
+	
+	 public static void main(String[] args) throws InterruptedException {
+		// Create chrome launcher.
+			System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+
+			// Launch chrome using Selenium
+			ChromeDriver driver = new ChromeDriver();
+
+			// Get the Devtools Service
+			ChromeDevToolsService devToolsService = DevToolsService.getDevToolsService(driver);
+			
+			// Measure Performance
+			NetworkPerformance.getPerformanceMetrics(devToolsService);
+			
+			// Load Page
+			driver.get("https://selenium.dev/");
+			
+		  }
+}
+
+```
 
 **DevTools-Selenium Code for taking Full Page Screenshot**
 
 ```java
-package com.qeagle.devtools.examples;
-
-import com.qeagle.devtools.protocol.commands.Emulation;
-import com.qeagle.devtools.protocol.types.page.CaptureScreenshotFormat;
-import com.qeagle.devtools.protocol.types.page.LayoutMetrics;
-import com.qeagle.devtools.protocol.types.page.Viewport;
-import com.qeagle.devtools.services.ChromeDevToolsService;
-import com.qeagle.devtools.services.ChromeService;
-import com.qeagle.devtools.services.impl.ChromeServiceImpl;
-import com.qeagle.devtools.utils.FullScreenshot;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Base64;
-import java.util.Map;
-
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.qeagle.devtools.webdriver.DevToolsService;
 
 /**
  * Takes a full page screenshot. The output screenshot dimensions will be page width x page height
@@ -93,26 +149,9 @@ public class FullPageScreenshot {
 **DevTools Indepdent Code for taking Full Page Screenshot (Without Using Selenium)**
 
 ```java
-package com.github.qeagle.devtools.examples;
-
-import com.github.qeagle.devtools.protocol.commands.Emulation;
-import com.github.qeagle.devtools.protocol.types.page.CaptureScreenshotFormat;
-import com.github.qeagle.devtools.protocol.types.page.LayoutMetrics;
-import com.github.qeagle.devtools.protocol.types.page.Viewport;
-import com.github.qeagle.devtools.services.ChromeDevToolsService;
-import com.github.qeagle.devtools.services.ChromeService;
-import com.github.qeagle.devtools.services.impl.ChromeServiceImpl;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Base64;
-import java.util.Map;
-
-import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
- * Takes a full page screenshot. The output screenshot dimensions will be page width x page height,
- * for example when capturing http://amazon.com the output screenshot.
+ * Takes a full page screenshot for the browser launched usng CDP
  *
  * @author TestLeaf
  */
@@ -143,30 +182,6 @@ public class FullPageScreenshotWithoutSelenium {
 **Selenium 4 Devtools Code for Taking Full Screenshot**
 
 ```java
-package selenium.tests;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.time.Duration;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.codec.binary.Base64;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.Command;
-import org.openqa.selenium.devtools.ConverterFunctions;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.Event;
-import org.openqa.selenium.devtools.Log;
-import org.openqa.selenium.devtools.Target;
-import org.openqa.selenium.devtools.Target.SessionId;
-import org.testng.annotations.Test;
-
-import com.google.common.collect.ImmutableMap;
 
 public class SeleniumDevToolsFullSnap{
 
@@ -207,94 +222,13 @@ public class SeleniumDevToolsFullSnap{
 
 ```
 
-** Another Example of using Event Listeners - Waiting for the Layers to disappear **
 
-```java
-
-package com.qeagle.devtools.examples;
-
-import com.qeagle.devtools.launch.ChromeLauncher;
-import com.qeagle.devtools.protocol.commands.LayerTree;
-import com.qeagle.devtools.protocol.commands.Network;
-import com.qeagle.devtools.protocol.commands.Page;
-import com.qeagle.devtools.protocol.events.layertree.LayerTreeDidChange;
-import com.qeagle.devtools.protocol.support.types.EventHandler;
-import com.qeagle.devtools.protocol.support.types.EventListener;
-import com.qeagle.devtools.protocol.types.layertree.Layer;
-import com.qeagle.devtools.services.ChromeDevToolsService;
-import com.qeagle.devtools.services.ChromeService;
-import com.qeagle.devtools.services.impl.ChromeServiceImpl;
-import com.qeagle.devtools.services.types.ChromeTab;
-import com.qeagle.devtools.services.types.EventListenerImpl;
-import com.qeagle.devtools.utils.LayerChange;
-
-import java.lang.Thread.State;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
-import javax.print.attribute.standard.Sides;
-
-import org.omg.Messaging.SyncScopeHelper;
-import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.qeagle.devtools.webdriver.DevToolsService;
-
-/**
- * Blocks an URLs given a patterns.
- *
- * @author Gopinath
- */
-public class WaitForLayersToDisapper {
-	public static void main(String[] args) throws InterruptedException, ExecutionException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
-
-		// Create chrome launcher.
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-
-		// Launch chrome using Selenium
-		ChromeDriver driver = new ChromeDriver();
-
-		// Get the Devtools Service
-		ChromeDevToolsService devToolsService = DevToolsService.getDevToolsService(driver);
-		
-		// Load the URL now
-		driver.get("https://raphaelfabeni.com/css-loader/");
-
-		// Get the Layers 
-		LayerTree layers = LayerChange.enableLayers(devToolsService);
-
-		// Click on loader
-		driver.findElement(By.id("loader-border")).click();
-
-		// Wait for the layers for reset
-		LayerChange.waitUntilLayerChanged(layers);
-		
-		// Reset the layers
-		LayerChange.disableLayers(devToolsService);
-		
-		// Click on the next element
-		driver.findElement(By.id("loader-bar-rounded")).click();
-
-
-	}
-
-
-
-
-}
-
-```
 
 More Examples can be seen [here](https://github.com/testleaf-software/devtools-selenium/tree/master/ChromeDevTools/src/test/java/com/github/qeagle/devtools/examples). 
 
+**Credit**
+
+Kenan Klisura (Chrome DevTools Project)
 
 **Additional Insights**
 
